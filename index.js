@@ -9,18 +9,6 @@ app.get('/', (req, res) => {
   res.send('<h1>Danh sách liên hệ</h1><a href="/add-contact">Thêm liên hệ</a>');
 });
 
-// Hiển thị form thêm liên hệ
-app.get('/add-contact', (req, res) => {
-  res.sendFile(__dirname + '/views/addContact.html');
-});
-
-app.post('/add-contact', (req, res) => {
-  const { name, phone, email } = req.body;
-  // TODO: Lưu thông tin liên hệ, bao gồm cả email
-  console.log('Thêm liên hệ:', name, phone, email);
-  res.send(`<p>Đã thêm liên hệ: ${name} - ${phone} - ${email}</p><a href="/">Quay lại</a>`);
-});
-
 
 app.listen(3000, () => {
   console.log('Server đang chạy tại http://localhost:3000');
